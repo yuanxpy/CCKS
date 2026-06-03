@@ -1,0 +1,42 @@
+# --- COLA specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+# runner: "episode"
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+consensus_builder_embedding_dim: 32
+# use the Q_Learner to train
+agent_output_type: "q"
+learner: "cola_learner"
+double_q: True
+mixer: # Mixer becomes None
+
+
+consensus_builder_hidden_dim: 64
+consensus_builder_dim: 32
+
+tau: 0.996
+center_tau: 0.9
+online_temp: 0.1
+target_temp: 0.04
+input: "hidden" # "obs" or "hidden"
+
+name: "cola_cons"
+budget: 1000000
+start_advice: 500000
+variable_a: 0.5
+c_ep: 10000
+c_w: 0.4
+tau: 0.6
+K: 3
+beta: 0
+
+#0 0.2 0.4 0.6 0.8 1
